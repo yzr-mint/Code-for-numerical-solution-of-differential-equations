@@ -1,17 +1,10 @@
 # include <vector>
 # include <iostream>
-
 using namespace std;
-typedef double datatype;
 
-datatype function(datatype u, datatype t) {
-    return 5 * u;
-}
-
-const datatype h = (datatype)0.05;
-
-vector<datatype>* linspace(datatype lb, datatype rb, datatype step) {
-    vector<datatype>* a = new vector<datatype>;
+template<typename Datatype>
+vector<Datatype>* linspace(Datatype lb, Datatype rb, Datatype step) {
+    vector<Datatype>* a = new vector<Datatype>;
     for (; lb <= rb; lb += step) {
         a->push_back(lb);
     }
@@ -60,10 +53,19 @@ Datatype iterate_solve(Datatype un, Datatype tn, Datatype tn1, Datatype h, Datat
 }
 
 // ≤‚ ‘
+
+typedef double datatype;
+
+datatype function(datatype u, datatype t) {
+    return 5 * u;
+}
+
+const datatype h = (datatype)0.05;
+
 int main() {
     vector<datatype>* result1 = Euler_method<datatype>(function, 1, 0, 1, h);
     for (auto i = result1->begin(); i != result1->end(); i++) {
-        cout << *i << " ";
+        cout << ":" << *i << " ";
     }
     cout << endl;
     vector<datatype>* result2 = advanced_Euler_method<datatype>(function, 1, 0, 1, h);

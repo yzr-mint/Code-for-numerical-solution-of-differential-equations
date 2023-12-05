@@ -46,7 +46,7 @@ Datatype step(vector<Datatype>* us, vector<Datatype>* ts, Datatype h, Datatype f
 }
 
 template<typename Datatype>
-vector<Datatype>* solve(vector<Datatype>* u0, vector<Datatype>* t0, Datatype h, Datatype func(Datatype, Datatype), Datatype ub) {
+vector<Datatype>* solve_exterpolate(vector<Datatype>* u0, vector<Datatype>* t0, Datatype h, Datatype func(Datatype, Datatype), Datatype ub) {
 	vector<Datatype>* result = new vector<Datatype>({ u0->back() });
 	vector<Datatype>* us = new vector<Datatype>(*u0);
 	vector<Datatype>* ts = new vector<Datatype>(*t0);
@@ -81,7 +81,7 @@ void iterate(vector<Datatype>* us, vector<Datatype>* ts, Datatype h, Datatype fu
 }
 
 template<typename Datatype>
-vector<Datatype>* solve_in(vector<Datatype>* u0, vector<Datatype>* t0, Datatype h, Datatype func(Datatype, Datatype), Datatype ub) {
+vector<Datatype>* solve_interpolate(vector<Datatype>* u0, vector<Datatype>* t0, Datatype h, Datatype func(Datatype, Datatype), Datatype ub) {
 	vector<Datatype>* result = new vector<Datatype>({ u0->back() });
 	vector<Datatype>* us = new vector<Datatype>(*u0);
 	vector<Datatype>* ts = new vector<Datatype>(*t0);
@@ -89,7 +89,7 @@ vector<Datatype>* solve_in(vector<Datatype>* u0, vector<Datatype>* t0, Datatype 
 		us->push_back(step(us, ts, h, func));
 		result->push_back(us->back());
 		ts->push_back(ts->back() + h);
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 5; i++) {
 			iterate(us, ts, h, func);
 		}
 		us->erase(us->begin());
@@ -127,14 +127,15 @@ vector<Datatype>* linspace(Datatype lb, Datatype rb, Datatype step) {
 // vector<datatype>* u0 = new vector<datatype>({ 2.1170000166 ,1.6487212707 ,1.2840254167, 1 });
 // vector<datatype>* t0 = new vector<datatype>({ -0.15,-0.1,-0.05,0 });
 
+/*
 int main() {
 
 	ofstream output;
 	output.open("output.csv", ios_base::out);
 
 	datatype now = 0;
-	vector<datatype>* u0 = new vector<datatype>({ 2.1170000166 ,1.6487212707 ,1.2840254167, 1 });
-	vector<datatype>* t0 = new vector<datatype>({ -0.15,-0.1,-0.05,0 });
+	vector<datatype>* u0 = new vector<datatype>({ 4.4816890703 ,2.7182818285 ,1.6487212707 ,1 });
+	vector<datatype>* t0 = new vector<datatype>({ -0.3,-0.2,-0.1,0 });
 	datatype h = t0->at(1) - t0->at(0);
 
 	vector<datatype>* ts = linspace<datatype>(0, 1, h);
@@ -143,13 +144,13 @@ int main() {
 	}
 	output << endl;
 
-	auto result1 = solve<datatype>(u0, t0, h, func, 1);
+	auto result1 = solve_exterpolate<datatype>(u0, t0, h, func, 1);
 	for (auto i = result1->begin(); i != result1->end(); i++) {
 		output << *i << ",";
 	}
 	output << endl;
 
-	auto result2 = solve_in<datatype>(u0, t0, h, func, 1);
+	auto result2 = solve_interpolate<datatype>(u0, t0, h, func, 1);
 	for (auto i = result2->begin(); i != result2->end(); i++) {
 		output << *i << ",";
 	}
@@ -157,6 +158,7 @@ int main() {
 
 	return 0;
 }
+*/
 
 
 

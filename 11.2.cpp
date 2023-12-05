@@ -61,13 +61,13 @@ datatype function(datatype u, datatype t) {
     return -5 * u;
 }
 
-const datatype h = (datatype)0.05;
-
+/*
 int main() {
 
     ofstream output;
     output.open("output.csv", ios_base::out);
 
+    const datatype h = (datatype)0.05;
     vector<datatype>* ts = linspace<datatype>(0, 1, h);
     for (auto i = ts->begin(); i != ts->end(); i++) {
         output << *i << ",";
@@ -84,3 +84,4 @@ int main() {
     }
     output << endl;
 }
+*/

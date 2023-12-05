@@ -5,8 +5,6 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "微分方程数值解", "微分方程数值解.vcxproj", "{B1446794-3568-4FA6-B99C-8535ACB5AB7A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "作业2", "作业2\作业2.vcxproj", "{273F9CA5-E3DA-4F2C-93E1-02D695499533}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -23,14 +21,6 @@ Global
 		{B1446794-3568-4FA6-B99C-8535ACB5AB7A}.Release|x64.Build.0 = Release|x64
 		{B1446794-3568-4FA6-B99C-8535ACB5AB7A}.Release|x86.ActiveCfg = Release|Win32
 		{B1446794-3568-4FA6-B99C-8535ACB5AB7A}.Release|x86.Build.0 = Release|Win32
-		{273F9CA5-E3DA-4F2C-93E1-02D695499533}.Debug|x64.ActiveCfg = Debug|x64
-		{273F9CA5-E3DA-4F2C-93E1-02D695499533}.Debug|x64.Build.0 = Debug|x64
-		{273F9CA5-E3DA-4F2C-93E1-02D695499533}.Debug|x86.ActiveCfg = Debug|Win32
-		{273F9CA5-E3DA-4F2C-93E1-02D695499533}.Debug|x86.Build.0 = Debug|Win32
-		{273F9CA5-E3DA-4F2C-93E1-02D695499533}.Release|x64.ActiveCfg = Release|x64
-		{273F9CA5-E3DA-4F2C-93E1-02D695499533}.Release|x64.Build.0 = Release|x64
-		{273F9CA5-E3DA-4F2C-93E1-02D695499533}.Release|x86.ActiveCfg = Release|Win32
-		{273F9CA5-E3DA-4F2C-93E1-02D695499533}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

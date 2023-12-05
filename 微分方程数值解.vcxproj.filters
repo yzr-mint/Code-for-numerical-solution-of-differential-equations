@@ -18,5 +18,14 @@
     <ClCompile Include="11.2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="作业2\11.9.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="11.16.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="11.24.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

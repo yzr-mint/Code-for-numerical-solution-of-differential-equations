@@ -127,7 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="11.16.cpp" />
     <ClCompile Include="11.2.cpp" />
+    <ClCompile Include="11.24.cpp" />
+    <ClCompile Include="作业2\11.9.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

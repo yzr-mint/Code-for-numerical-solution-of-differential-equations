@@ -28,7 +28,7 @@ vector<Datatype>* linspace(Datatype lb, Datatype rb, Datatype step) {
     return a;
 }
 
-int main() {
+int main24() {
     double t0 = 0.0;
     double t_end = 2.0;
     vector<double> hs = { 0.1,0.5,1 };

@@ -58,30 +58,32 @@ Datatype iterate_solve(Datatype un, Datatype tn, Datatype tn1, Datatype h, Datat
 typedef double datatype;
 
 datatype function(datatype u, datatype t) {
-    return -5 * u;
+    return -3 * sqrt(u)+5*t;
 }
 
-/*
+const datatype lb = 0.;
+const datatype rb = 0.4;
+const datatype u0 = 2.;
+const datatype h = (datatype)0.025;
+
 int main() {
 
     ofstream output;
     output.open("output.csv", ios_base::out);
 
-    const datatype h = (datatype)0.05;
-    vector<datatype>* ts = linspace<datatype>(0, 1, h);
+    vector<datatype>* ts = linspace<datatype>(lb, rb, h);
     for (auto i = ts->begin(); i != ts->end(); i++) {
         output << *i << ",";
     }
     output << endl;
-    vector<datatype>* result1 = Euler_method<datatype>(function, 1, 0, 1, h);
+    vector<datatype>* result1 = Euler_method<datatype>(function, u0, lb, rb, h);
     for (auto i = result1->begin(); i != result1->end(); i++) {
         output << *i << ",";
     }
     output << endl;
-    vector<datatype>* result2 = advanced_Euler_method<datatype>(function, 1, 0, 1, h);
+    vector<datatype>* result2 = advanced_Euler_method<datatype>(function, u0, lb, rb, h);
     for (auto i = result2->begin(); i != result2->end(); i++) {
         output << *i << ",";
     }
     output << endl;
 }
-*/
